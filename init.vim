@@ -3,15 +3,17 @@
 " ~~~~~~~~
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'crusoexia/vim-monokai'
-
-Plug 'pangloss/vim-javascript'
+Plug 'tpope/vim-surround'
 
 Plug 'sbdchd/neoformat'
 
 Plug 'w0rp/ale'
 
-Plug 'tpope/vim-surround'
+Plug 'lilydjwg/colorizer' |", { 'do': 'make install' }
+
+Plug 'pangloss/vim-javascript'
+
+Plug 'cakebaker/scss-syntax.vim'
 
 call plug#end()
 
@@ -19,8 +21,9 @@ call plug#end()
 " Colors
 " ~~~~~~~
 syntax on
-colorscheme monokai
 set termguicolors
+" based on https://github.com/crusoexia/vim-monokai
+colorscheme monokai
 let g:monokai_term_italic = 1
 
 " ~~~~~~~~
@@ -30,9 +33,9 @@ let g:monokai_term_italic = 1
 let mapleader=" "
 
 " quick open $MYVIMRC file
-nnoremap <leader>ve :split $MYVIMRC <bar> winc J <cr>
+nnoremap <leader><leader>v :split $MYVIMRC <bar> winc J <cr>
 " quick source $MYVIMRC file
-nnoremap <leader>vs :source $MYVIMRC<cr>
+nnoremap <leader><leader>s :source $MYVIMRC<cr>
 
 " -- INSERT -- exit 
 inoremap jj <esc>
@@ -52,8 +55,8 @@ let g:neoformat_basic_format_align = 1
 " Linters
 " ~~~~~~~~
 let g:ale_linters_explicit = 1
-let g:ale_sign_error='~>'
-let g:ale_sign_warning='-'
+let g:ale_sign_error='E'
+let g:ale_sign_warning='W'
 
 let g:ale_linters = {
 \   'javascript': ['eslint'],
