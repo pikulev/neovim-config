@@ -11,7 +11,7 @@ Plug 'w0rp/ale'
 Plug 'lilydjwg/colorizer' |", { 'do': 'make install' }
 Plug 'othree/yajs.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
-Pluf 'othree/es.next.syntax.vim'
+Plug 'othree/es.next.syntax.vim'
 Plug 'cakebaker/scss-syntax.vim'
 call plug#end()
 
@@ -66,5 +66,7 @@ let g:ale_linters = {
 \   'javascript': ['eslint'],
 \}
 
+" Make it depends on the project you are working with via autocmd.
+" https://github.com/othree/javascript-libraries-syntax.vim
 let g:used_javascript_libs = 'underscore,angularjs,react,vue,jquery'
 
