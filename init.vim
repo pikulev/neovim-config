@@ -32,23 +32,25 @@ let mapleader=" "
 nnoremap <leader><leader>v :vsplit $MYVIMRC <bar> winc L <cr>
 " quick source $MYVIMRC file
 nnoremap <leader><leader>s :source $MYVIMRC<cr>
-" -- INSERT -- exit 
+" -- INSERT -- exit
 inoremap jj <esc>
 inoremap <esc> <nop>
 
 
 " ~~~~~~~~
-" Formatting
+" Layout & Formatting
 " ~~~~~~~~
+set number
+set list
+set lcs=space:·,tab:>-
+highlight ExtraWhitespace ctermbg=red guibg=#ee2211 guifg=#eeeeee
+match ExtraWhitespace /\s\+$/
+
 let g:neoformat_enabled_javascript = ['jsbeautify']
 let g:neoformat_enabled_json = ['jsbeautify']
 let g:neoformat_basic_format_trim = 1
 let g:neoformat_basic_format_align = 1
 " let g:neoformat_run_all_formatters = 1
-set list
-set lcs=space:·,tab:>-
-highlight ExtraWhitespace ctermbg=red guibg=#ee2211 guifg=#eeeeee
-match ExtraWhitespace /\s\+$/
 
 " ~~~~~~~~
 " Linters
