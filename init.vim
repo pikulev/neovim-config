@@ -5,8 +5,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 Plug 'sbdchd/neoformat'
-Plug 'Yggdroot/indentLine'
 Plug 'w0rp/ale'
 Plug 'lilydjwg/colorizer' |", { 'do': 'make install' }
 Plug 'othree/yajs.vim'
@@ -21,10 +21,7 @@ call plug#end()
 " ~~~~~~~
 syntax on
 set termguicolors
-" based on https://github.com/crusoexia/vim-monokai
 colorscheme new_monokai
-let g:monokai_term_italic = 1
-
 
 " ~~~~~~~~
 " Keymaps
@@ -48,13 +45,10 @@ let g:neoformat_enabled_json = ['jsbeautify']
 let g:neoformat_basic_format_trim = 1
 let g:neoformat_basic_format_align = 1
 " let g:neoformat_run_all_formatters = 1
-
-let g:indentLine_char = ' ⎸'
-set listchars=space:·
-highlight WhiteSpaceBol guifg=blue
-highlight WhiteSpaceMol guifg=white
-match WhiteSpaceMol / /
-2match WhiteSpaceBol /^ \+/
+set list
+set lcs=space:·,tab:>-
+highlight ExtraWhitespace ctermbg=red guibg=#ee2211 guifg=#eeeeee
+match ExtraWhitespace /\s\+$/
 
 " ~~~~~~~~
 " Linters
