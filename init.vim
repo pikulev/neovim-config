@@ -13,6 +13,7 @@ Plug 'othree/yajs.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'paretje/nvim-man'
 call plug#end()
 
 
