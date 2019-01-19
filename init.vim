@@ -34,7 +34,7 @@ nnoremap <leader><leader>v :vsplit $MYVIMRC <bar> winc L <cr>
 nnoremap <leader><leader>s :source $MYVIMRC<cr>
 " -- INSERT -- exit
 inoremap jj <esc>
-inoremap <esc> <nop>
+" inoremap <esc> <nop>
 
 
 " ~~~~~~~~
